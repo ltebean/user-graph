@@ -20,7 +20,7 @@ graph.follow('kael', 'ltebean', function(err, res) {})
 
 graph.getFollowers('kael', function(err, users) {
 	console.log("kael's followers: %s",users);
-	// kael's followers: 2
+	// kael's followers: spud,ltebean
 })
 
 graph.getFollowing('ltebean', function(err, users) {
@@ -35,6 +35,6 @@ graph.getFriends('ltebean',function(err,users){
 
 graph.getRecommendation('ltebean',function(err,users){
 	console.log("recommendation for ltebean: %s",users);
-	// ecommendation for ltebean: TJ,villa
+	// recommendation for ltebean: TJ,villa
 })
 ```
