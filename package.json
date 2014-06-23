@@ -1,12 +1,15 @@
 {
   "name": "user-graph",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "user graph api implemented with redis",
   "main": "index.js",
   "scripts": {
   },
   "author": "ltebean",
   "license": "MIT",
+  "keywords": [
+    "user graph","redis","follow","friends"
+  ],
   "dependencies": {
     "redis": "^0.10.3",
     "hiredis": "^0.1.17",
