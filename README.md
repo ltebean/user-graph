@@ -40,3 +40,5 @@ graph.user('ltebean').recommendation(function(err, users) {
 graph.user('ltebean').unfollow('whoever', function(err, res) {});
 
 ```
+
+more example see test/index.js

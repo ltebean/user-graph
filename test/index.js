@@ -46,6 +46,4 @@ graph.user('ltebean').recommendation(function(err, users) {
 	console.log("recommendation for ltebean: %s", users);
 })
 
-graph.user('ltebean').unfollow('kael',function(err, users) {
-	console.log("recommendation for ltebean: %s", users);
-})
+// graph.user('ltebean').unfollow('whoever',function(err, users) {})
