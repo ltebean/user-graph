@@ -18,14 +18,34 @@ graph.user('kael').followers(function(err, users) {
 	console.log("kael's followers: %s", users);
 })
 
+graph.user('kael').followersCount(function(err, res) {
+	console.log("kael's followers count: %s", res);
+})
+
 graph.user('ltebean').following(function(err, users) {
 	console.log("ltebean is following: %s", users);
+})
+
+graph.user('kael').followingCount(function(err, res) {
+	console.log("kael's following count: %s", res);
 })
 
 graph.user('ltebean').friends(function(err, users) {
 	console.log("ltebean's friends: %s", users);
 })
 
+graph.user('ltebean').isFollowing('kael',function(err, users) {
+	console.log("ltebean is following kael: %s", users);
+})
+
+graph.user('ltebean').isFollowedBy('kael',function(err, users) {
+	console.log("ltebean is followed by kael", users);
+})
+
 graph.user('ltebean').recommendation(function(err, users) {
+	console.log("recommendation for ltebean: %s", users);
+})
+
+graph.user('ltebean').unfollow('kael',function(err, users) {
 	console.log("recommendation for ltebean: %s", users);
 })
