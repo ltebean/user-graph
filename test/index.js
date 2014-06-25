@@ -1,32 +1,31 @@
-var graph = require('../').init({
-	host: '127.0.0.1',
-	port: '6379',
-	options: {},
+var redis = require('redis');
+var graph = require('../').initWithRedisClient({
+	client: redis.createClient(),
 	namespace: 'usergraph'
 });
 
-graph.follow('ltebean', 'kael', function(err, res) {})
-graph.follow('ltebean', 'spud', function(err, res) {})
+graph.user('ltebean').follow('kael', function(err, res) {});
+graph.user('ltebean').follow('spud', function(err, res) {});
 
-graph.follow('spud', 'kael', function(err, res) {})
-graph.follow('spud', 'ltebean', function(err, res) {})
-graph.follow('spud', 'villa', function(err, res) {})
+graph.user('spud').follow('kael', function(err, res) {});
+graph.user('spud').follow('ltebean', function(err, res) {});
+graph.user('spud').follow('villa', function(err, res) {});
 
-graph.follow('kael', 'TJ', function(err, res) {})
-graph.follow('kael', 'ltebean', function(err, res) {})
+graph.user('kael').follow('TJ', function(err, res) {});
 
-graph.getFollowers('kael', function(err, users) {
-	console.log("kael's followers: %s",users);
+
+graph.user('kael').followers(function(err, users) {
+	console.log("kael's followers: %s", users);
 })
 
-graph.getFollowing('ltebean', function(err, users) {
-	console.log("ltebean is following: %s",users);
+graph.user('ltebean').following(function(err, users) {
+	console.log("ltebean is following: %s", users);
 })
 
-graph.getFriends('ltebean',function(err,users){
-	console.log("ltebean's friends: %s",users);
+graph.user('ltebean').friends(function(err, users) {
+	console.log("ltebean's friends: %s", users);
 })
 
-graph.getRecommendation('ltebean',function(err,users){
-	console.log("recommendation for ltebean: %s",users);
+graph.user('ltebean').recommendation(function(err, users) {
+	console.log("recommendation for ltebean: %s", users);
 })

@@ -1,6 +1,6 @@
 {
   "name": "user-graph",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "user graph api implemented with redis",
   "main": "index.js",
   "scripts": {
